@@ -78,6 +78,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('172.20.0.1', 6379)],
+        },
+    },
+}
+
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
