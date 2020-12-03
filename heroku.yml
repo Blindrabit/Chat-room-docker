@@ -1,0 +1,19 @@
+
+setup:
+    addons:
+    - plan: heroku-postgresql
+    - plan: heroku-redis
+build:
+    docker:
+        web: Dockerfile
+        celery: Dockerfile
+release:
+    image: web
+    command:
+        - python manage.py collectstatic --noinput
+run:
+    web: python /code/manage.py runserver
+    celery: 
+        command:
+            - celery -A config worker -l INFO
+            - heroku ps:scale celery=1

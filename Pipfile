@@ -11,6 +11,7 @@ psycopg2-binary = "*"
 channels = "*"
 channels-redis = "*"
 selenium = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.8"
