@@ -12,6 +12,7 @@ channels = "*"
 channels-redis = "*"
 selenium = "*"
 whitenoise = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.8"
